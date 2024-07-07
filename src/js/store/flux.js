@@ -1,5 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+		// variables
 		store: {
 			demo: [
 				{
@@ -12,9 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			contacts: []
 		},
 		actions: {
+			// functions
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -37,7 +40,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			// getAgenda: () => {}, come back to 
+
+			createAgenda: async () => {
+				let response = await fetch("https://playground.4geeks.com/contact/agendas/vdubach");
+				let data = await response.json();
+				console.log(data); // we don't have a need to store this data so we can just console.log it
+			},
+			createContact: () => {},
+			getContact: () => {},
+			updateContact: () => {},
+			delectContact: () => {},
 		}
 	};
 };
