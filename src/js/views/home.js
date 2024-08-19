@@ -11,7 +11,8 @@ export const Home = () => {
 
   // here we will create the agenda/user
   useEffect(() => {
-    actions.createAgenda();
+    // add a check to see if agenda exist
+    // actions.createAgenda();
     // after we create the agenda we want to get all our contacts
     actions.getContacts();
   }, []); // dependency array determines when the function runs
@@ -35,21 +36,20 @@ export const Home = () => {
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#exampleModal1"
       >
         Create Contact
       </button>
       <div
         className="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        id="exampleModal1"
+        aria-labelledby="exampleModalLabel1"
         aria-hidden="true"
       >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              <h1 className="modal-title fs-5" id="exampleModalLabel1">
                 Modal title
               </h1>
               <button
@@ -62,18 +62,7 @@ export const Home = () => {
             <div className="modal-body">
               <CreateContact />
             </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
+            <div className="modal-footer"></div>
           </div>
         </div>
       </div>

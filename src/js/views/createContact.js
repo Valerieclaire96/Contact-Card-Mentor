@@ -14,7 +14,7 @@ export default function CreateContact() {
 
   // we need to make a the post request with the user information
   const handleSubmit = () => {
-    actions.createContact(name, email, phone, address); //pass infomation about the user to the function 
+    actions.createContact(name, email, phone, address); //pass infomation about the user to the function
     // make sure the information in the same order that the function expects to recieve it
     // if this works then I want to redirect it to the home page
     navigate("/");

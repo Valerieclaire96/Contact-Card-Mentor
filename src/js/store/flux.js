@@ -45,7 +45,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       createAgenda: async () => {
         let response = await fetch(
-          "https://playground.4geeks.com/contact/agendas/vdubach"
+          "http://playground.4geeks.com/contact/agendas/vdubach",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+          }
         );
         let data = await response.json();
         console.log(data); // we don't have a need to store this data so we can just console.log it
